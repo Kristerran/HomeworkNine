@@ -8,6 +8,18 @@ const util = require('util');
 const TeamManager = require("./teamManager")
 const Engineer = require("./engineer")
 const Intern = require("./intern");
+const TeamMember = require('./teamMember');
+
+const htmlHolder =  
+`
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Employee Tracker</title>
+</head>
+<body>
+<H1 class = 'title'> Team Members </H1>
+`
 
 
 
@@ -21,7 +33,7 @@ const Intern = require("./intern");
 // Functions
 const startManager = () => {
     return inquirer.prompt([{
-        name: "managerName",
+        name: "name",
         type: "input",
         message: "Please enter the employee manager's name:",
     },
@@ -41,12 +53,15 @@ const startManager = () => {
         message: "Please enter the employees four digit office number:",
     }
 ]).then(answers => {
-    const managersName = answers.managersName
+    const name = answers.name
     const employeeId = answers.employeeId
     const email = answers.email
     const officeNum = answers.officeNum
-    const teamManager = new TeamManager(managersName, employeeId, email, officeNum)
-    console.log(teamMember)
+    const teamManager = new TeamManager(name, employeeId, email, officeNum)
+    var printIt =teamManager.printHtml()
+    htmlHolder += printIt
+    console.log(htmlHolder)
+
     menu()
 })
 }
@@ -60,7 +75,7 @@ const menu = () => {
      ]).then(answers => {
     if(answers.newTm == 'Y') {
        console.log('Adding a new Team member!')
-       newUser()
+       employeeMenu()
     }
     else if(answers.newTm == 'N') {
         console.log('No more team members to add!')
@@ -68,7 +83,7 @@ const menu = () => {
     }
     else{
         console.log('Please enter \"Y\" or \"N\"')
-        startMenu()
+        menu()
     }
      })
     }
@@ -91,18 +106,53 @@ const engineerMenu = () => {
         message: "Please enter the employees Email adress:",
     },
     {
-        name: "officeNum",
+        name: "github",
         type: "input",
-        message: "Please enter the employees four digit office number:",
+        message: "Please enter the employees github account:",
     }
 ]).then(answers => {
-    const managersName = answers.managersName
+    const name = answers.name
     const employeeId = answers.employeeId
     const email = answers.email
-    const officeNum = answers.officeNum
-    const teamMember = new TeamMember(managersName, employeeId, email, officeNum)
-    console.log(teamMember)
-    employeeMenu()
+    const github = answers.github
+    const engineer = new Engineer(name, employeeId, email, github)
+    var printIt =engineer.printHtml()
+    htmlHolder += printIt
+    console.log(htmlHolder)
+    menu()
+})
+}
+const internMenu = () => {
+    return inquirer.prompt([{
+        name: "name",
+        type: "input",
+        message: "Please enter the employee's name:",
+    },
+    {
+        name: "employeeId",
+        type: "input",
+        message: "Please enter the employees four digit employee ID:",
+    },
+    {
+        name: "email",
+        type: "input",
+        message: "Please enter the employees Email adress:",
+    },
+    {
+        name: "school",
+        type: "input",
+        message: "Please enter the employees current school program:",
+    }
+]).then(answers => {
+    const name = answers.name
+    const employeeId = answers.employeeId
+    const email = answers.email
+    const school = answers.school
+    const intern = new Intern(name, employeeId, email, school)
+    var printIt =intern.printHtml()
+    htmlHolder += printIt
+    console.log(htmlHolder)
+    menu()
 })
 }
 
@@ -146,7 +196,9 @@ else{
     }
 })
 }
-
+function printHtml(){
+    
+}
 startManager()
 
 

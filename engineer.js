@@ -1,4 +1,4 @@
-const TeamMember = require('./teamManager');
+const TeamMember = require('./teamMember');
 
 class Engineer extends TeamMember {
     constructor(name, id, email, github){

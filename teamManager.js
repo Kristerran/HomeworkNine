@@ -1,3 +1,4 @@
+const TeamMember = require("./teamMember");
  class TeamManager extends TeamMember {
     constructor(name, employeeId, email, officeNum) {
       super(name, employeeId, email, 'Team manager', officeNum)

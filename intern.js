@@ -1,5 +1,4 @@
-const TeamMember = require('./teamManager');
-
+const TeamMember = require('./teamMember');
 class Intern extends TeamMember {
     constructor(name, id, email, school){
         super(name, id, email, 'student', school)
