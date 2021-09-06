@@ -1,1 +1,132 @@
-teamArray%20%3D%3E%20%7B%0D%0A%20%20%20%20console.log(teamArray)%0D%0A%20%20%20%20printHtml%20%3D%20%60%0D%0A%20%20%20%20%3C!DOCTYPE%20html%3E%0D%0A%20%20%20%20%3Chtml%20lang%3D%22en%22%3E%0D%0A%20%20%20%20%3Chead%3E%0D%0A%20%20%20%20%3Cmeta%20charset%3D%22UTF-8%22%3E%0D%0A%20%20%20%20%3Cmeta%20http-equiv%3D%22X-UA-Compatible%22%20content%3D%22IE%3Dedge%22%3E%0D%0A%20%20%20%20%3Cmeta%20name%3D%22viewport%22%20content%3D%22width%3Ddevice-width%2C%20initial-scale%3D1.0%22%3E%0D%0A%20%20%20%20%3Ctitle%3EDocument%3C%2Ftitle%3E%0D%0A%20%20%20%20%3C%2Fhead%3E%0D%0A%20%20%20%20%3Cbody%3E%0D%0A%20%20%20%20%60%0D%0A%20%20%20%20teamArray.forEach(element%20%3D%3E%20%7B%0D%0A%20%20%20%20%20%20%20%20console.log(element)%0D%0A%20%20%20%20%20%20%20%20if%20(element.role%20%3D%3D%20'TeamManager')%20%7B%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20printHtml%20%2B%3D%20%60%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20HTML%20HERE%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%60%0D%0A%20%20%20%20%20%20%20%20%7D%0D%0A%20%20%20%20%20%20%20%20if%20(element.role%20%3D%3D%20'Engineer')%20%7B%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20printHtml%20%2B%3D%20%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%60%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20HTML%20HERE%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%60%0D%0A%20%20%20%20%20%20%20%20%7D%0D%0A%20%20%20%20%20%20%20%20if%20(element.role%20%3D%3D%20'Intern')%20%7B%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20printHtml%20%2B%3D%20%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%60%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20HTML%20HERE%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%60%0D%0A%20%20%20%20%20%20%20%20%7D%0D%0A%20%20%20%20%7D)%0D%0A%20%20%20%20printHtml%20%2B%3D%0D%0A%20%20%20%20%60%0D%0A%20%20%20%20%3C%2Fbody%3E%0D%0A%20%20%20%20%3C%2Fhtml%3E%0D%0A%20%20%20%20%60%0D%0A%20%20%20%20return%20printHtml%0D%0A%7D
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meet the Team!</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    </head>
+    <body>
+
+    <h1 class="display-1">
+         Meet the team! 
+    </h1>
+    <div class="container-fluid" style="display:flex; justify-content:center; flex-wrap:wrap;">
+    
+            <div class = "card" style="width: 18rem; margin:auto;">
+                <img src="https://petcostumecenter.com/wp-content/uploads/2020/05/580413_PS_PAW_BILL_SUIT-scaled.jpg" class="card-img-top" alt="Manager Cat">
+                    <div class="card-body>
+                        <h5 class="card-title">Name: Karen Bossmen </h5>
+                        <P class="card-text">Role: TeamManager </P>
+                        <ul class="list-group list-group-flush" style="padding:10%;">
+                            <li>
+                                Employee Id: 2938
+                            </li>
+                            <li>
+                                <a class="card-link" href = 'mailTo:Karen@bossmen.gov'>
+                                    Email: Karen@bossmen.gov
+                                </a>
+                            </li>
+                            <li>
+                                    Office Number: 1982
+                            </li>
+                        </ul>
+                    </div>
+            </div>
+            <div class="break" style="flex-basis:100%; height:0;"></div>
+            
+            <div class = "card" style="width: 18rem; margin:auto;">
+                <img src="https://www.meme-arsenal.com/memes/fefc1ec992f82597471cc1ae91678794.jpg" class="card-img-top" alt="Engineer Doge">
+                    <div class="card-body>
+                        <h5 class="card-title">Name: Jim Parsing </h5>
+                        <P class="card-text">Role: Engineer </P>
+                        <ul class="list-group list-group-flush" style="padding:10%;">
+                            <li>
+                                Employee ID: 9993
+                            </li>
+                            <li>
+                                <a class="card-link" href = 'mailTo:Developer@jimparsing.net'>
+                                    Email: Developer@jimparsing.net
+                                </a>
+                            </li>
+                            <li>
+                                <a class="card-link" href = 'https://github.com/Kristerran>'>
+                                    Kristerran
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+            </div>
+            
+            <div class = "card" style="width: 18rem; margin:auto;">
+                <img src="https://www.meme-arsenal.com/memes/fefc1ec992f82597471cc1ae91678794.jpg" class="card-img-top" alt="Engineer Doge">
+                    <div class="card-body>
+                        <h5 class="card-title">Name: Golb Thedestroyer </h5>
+                        <P class="card-text">Role: Engineer </P>
+                        <ul class="list-group list-group-flush" style="padding:10%;">
+                            <li>
+                                Employee ID: 6695
+                            </li>
+                            <li>
+                                <a class="card-link" href = 'mailTo:RealHuman@notgoingtoeatyou,net'>
+                                    Email: RealHuman@notgoingtoeatyou,net
+                                </a>
+                            </li>
+                            <li>
+                                <a class="card-link" href = 'https://github.com/GolbsGit>'>
+                                    GolbsGit
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+            </div>
+            
+            <div class = "card" style="width: 18rem; margin:auto;">
+                <img src="https://ae01.alicdn.com/kf/HTB1eBxraovrK1RjSspcq6zzSXXa6/Plaid-Cat-Clothes-Summer-Fashion-Cat-Shirts-Coat-For-Small-Cats-Shirt-Clothing-Puppy-Kitten-Outfits.jpg_q50.jpg" class="card-img-top" alt="Intern Cat">
+                    <div class="card-body>
+                        <h5 class="card-title"> Name: Stevie the Inter (Don't know last name) </h5>
+                        <P class="card-text"> Role: Intern </P>
+                        <ul class="list-group list-group-flush" style="padding:10%;">
+                            <li>
+                                Employee ID: 1993
+                            </li>
+                            <li>
+                                <a class="card-link" href = 'mailTo:SteviesEmail@yahoo.com'>
+                                    Email: SteviesEmail@yahoo.com
+                                </a>
+                            </li>
+                            <li>
+                                    School: UC Davis Web Developer Bootcamp
+                            </li>
+                        </ul>
+                    </div>
+            </div>
+            
+            <div class = "card" style="width: 18rem; margin:auto;">
+                <img src="https://ae01.alicdn.com/kf/HTB1eBxraovrK1RjSspcq6zzSXXa6/Plaid-Cat-Clothes-Summer-Fashion-Cat-Shirts-Coat-For-Small-Cats-Shirt-Clothing-Puppy-Kitten-Outfits.jpg_q50.jpg" class="card-img-top" alt="Intern Cat">
+                    <div class="card-body>
+                        <h5 class="card-title"> Name: Golden Boy </h5>
+                        <P class="card-text"> Role: Intern </P>
+                        <ul class="list-group list-group-flush" style="padding:10%;">
+                            <li>
+                                Employee ID: 1000
+                            </li>
+                            <li>
+                                <a class="card-link" href = 'mailTo:BigGoodBoy@Goodboy.net'>
+                                    Email: BigGoodBoy@Goodboy.net
+                                </a>
+                            </li>
+                            <li>
+                                    School: Harvard Medical
+                            </li>
+                        </ul>
+                    </div>
+            </div>
+            
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    </body>
+    </html>
+    

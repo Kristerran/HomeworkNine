@@ -6,7 +6,7 @@ const util = require('util');
 const TeamManager = require("./teamManager")
 const Engineer = require("./engineer")
 const Intern = require("./intern");;
-
+const htmlTemplate = require('./generateTeam')
 var teamArray = []
 // Functions
 const startManager = () => {
@@ -26,7 +26,7 @@ const startManager = () => {
         message: "Please enter the employees Email adress:",
     },
     {
-        name: "officeNum",
+        name: "officeId",
         type: "input",
         message: "Please enter the employees four digit office number:",
     }
@@ -34,8 +34,8 @@ const startManager = () => {
     const name = answers.name
     const employeeId = answers.employeeId
     const email = answers.email
-    const officeNum = answers.officeNum
-    const teamManager = new TeamManager(name, employeeId, email, officeNum)
+    const officeId = answers.officeId
+    const teamManager = new TeamManager(name, employeeId, email, officeId)
     teamArray.push(teamManager)
     console.log(teamArray)
 
@@ -170,9 +170,7 @@ else{
 })
 }
 function printHtml(){
-    const htmlTemplate = require('./generateTeam')
-    const htmlPrint = encodeURIComponent(htmlTemplate)
-    fs.writeFileSync('index.html', htmlPrint)
+    fs.writeFileSync('index.html', htmlTemplate(teamArray))
     console.log('Index.html successfully written')
 }
 startManager()

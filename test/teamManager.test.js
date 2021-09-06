@@ -13,7 +13,7 @@ describe('TeamManagerincludes', () => {
     expect(teamManager.email).toBe('kris@kris.com');
   })
   it('Should have an officeNumber', () => {
-    expect(teamManager.officeNum).toBe('1234');
+    expect(teamManager.officeId).toBe('1234');
   })
   
 });
